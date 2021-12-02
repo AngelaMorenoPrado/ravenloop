@@ -1,0 +1,116 @@
+/* LOGIN */
+
+.body_index
+{
+    background-image: url("../img/security.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-section{
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 0;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding-bottom: 20px;
+}
+
+.user-img{
+    margin-top: -75px;
+}
+
+.user-img img{
+    width: 175px;
+    height: 175px;
+}
+
+.user-info
+{
+    margin-top: 20px;
+}
+
+.modal-dialog {
+    position: relative;
+    max-width: 500px;
+    margin: 1.75rem auto;
+    pointer-events: none;
+}
+
+.col-sm-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+.col-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.form-control {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    height: 1.7em;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    margin-bottom: 4px;
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+#avatar-login
+{
+    transition-duration: 2s;
+}
+
+#avatar-login:hover
+{
+    -webkit-filter: grayscale(100%);
+}
+
+.btn-user
+{
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 0.2rem;
+    border: 1px solid #ced4da;
+    height: 2rem;
+    transition-duration: 1.3s;
+    color: black;
+}
+
+.btn-user:hover
+{
+    cursor: pointer;
+    background-color: #008CBA;
+    color: #ced4da;
+}
+
+#text_login
+{
+    color: #D33910;
+}

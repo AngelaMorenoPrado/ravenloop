@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Prueba técnica - Ravenloop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../src/css/css.css">
+    </head>
+    <body class="body_index">
+        <section class="modal-dialog text-center">
+            <article class="col-sm-8 main-section">
+                <section class="modal-content">
+                    <div class="col-12 user-img">
+                        <img id="avatar-login" src="../src/img/avatar.svg" alt="">
+                    </div>
+                    <form role="form" class="col-12 user-info" method="POST" action="">
+                        <div class="form-inicio">
+                            <input type="text" class="form-control text-center" placeholder="Username" name="username" id="username">
+                        </div>
+                        <div class="form-inicio">
+                            <input type="password" class="form-control text-center" placeholder="Contraseña" name="password" id="password">
+                        </div>
+                        <button class="btn-user" onclick="checkLogin()">ENTRAR</button>
+                        <p id="text_login"></p>
+                    </form>
+                </section>
+            </article>
+        </section>
+        <script type="text/javascript" src="../src/data.json"></script>
+        <script type="text/javascript" src="../src/js/javascript.js"></script>
+    </body>
+</html>
