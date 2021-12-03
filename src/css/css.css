@@ -138,8 +138,8 @@ body
     display: inline-block;
     z-index: 200;
     float: right;
-    background-color:white;
     overflow: auto;
+    height: 2em;
 }
 
 .borde-header
@@ -193,6 +193,13 @@ body
 {
     margin-right: 1em;
     color: black;
+    text-align: center;
+    height: 2em;
+}
+
+.texto-header > label
+{
+    line-height: 2em;
 }
 
 .distancia-barra
@@ -209,4 +216,47 @@ body
 #btn-menu
 {
     display: none;
+}
+
+/* NAVBAR */
+
+.navbar-style
+{
+    background-color: #992313;
+    width: 14%;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    text-align: left;
+    box-shadow: 2px 2px 10px #303030;
+    z-index: 3;
+    transform: translateX(0%);
+}
+
+.lista-menu
+{
+    display: block;
+    margin-bottom: 0.8em;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.3em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 6%;
+    text-align: left;
+    font-size: 1em;
+}
+
+.letra_navbar
+{
+    font-size: 1em;
+    color: white;
+    text-transform: uppercase;
+    text-decoration:none;
+}
+
+ul
+{
+    list-style: none;
+    padding-inline-start: 0.5em;
 }

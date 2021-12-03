@@ -20,10 +20,17 @@
                     <label class="distancia-barra">|</label>
                     <label id="date"></label>
                     <label class="distancia-barra">|</label>
-                    <a class="pointer" href="{% url 'user_logout' %}"><strong>CERRAR SESIÓN</strong></a>
+                    <a class="pointer" onclick="cerrarSesion()"><strong>CERRAR SESIÓN</strong></a>
                 </article>
             </section>
         </header>
+        <nav id="nav-menu" class="navbar-style">
+            <br>
+            <ul> 
+                <li class="lista-menu"><a href="data.html" class="letra_navbar pointer">Resumen</a></li>
+                <li class="lista-menu"><a href="" class="letra_navbar">Dashboard</a></li>
+            </ul>
+        </nav>
         <script type="text/javascript" src="../src/data.json"></script>
         <script type="text/javascript" src="../src/js/javascript.js"></script>
         <script>
@@ -32,10 +39,20 @@
                 if(sessionStorage.getItem("username") === "username")
                 {
                     document.getElementById('body_data').style.display = 'block';
+                    document.getElementById('username').innerHTML = "Usuario: " + sessionStorage.getItem("username");
+
+                    var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0');
+                    var yyyy = today.getFullYear();
+
+                    today = dd + '/' + mm + '/' + yyyy;
+
+                    document.getElementById('date').innerHTML = "Fecha: " + today;
                 }
                 else
                 {
-                    document.getElementById('body_data').style.display = 'none';
+                    window.location.href = 'index.html';
                 }
             }
         </script>

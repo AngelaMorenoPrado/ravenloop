@@ -21,3 +21,9 @@ function checkLogin()
 
     event.preventDefault();
 }
+
+function cerrarSesion()
+{
+    sessionStorage.clear();
+    window.location.href = 'index.html';
+}
