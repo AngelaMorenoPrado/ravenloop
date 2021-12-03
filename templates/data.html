@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Prueba técnica - Ravenloop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../src/css/css.css">
+    </head>
+    <body class="body_data" id="body_data">
+        <header class="header-style borde-header" id="header-pagina">
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu" class="icon-menu" title="Botón abrir menú" id="label-input">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </label>
+            <section class="header-section derecha relative" id="section-idioma">
+                <article class="texto-header">
+                    <label id="username"></label>
+                    <label class="distancia-barra">|</label>
+                    <label id="date"></label>
+                    <label class="distancia-barra">|</label>
+                    <a class="pointer" href="{% url 'user_logout' %}"><strong>CERRAR SESIÓN</strong></a>
+                </article>
+            </section>
+        </header>
+        <script type="text/javascript" src="../src/data.json"></script>
+        <script type="text/javascript" src="../src/js/javascript.js"></script>
+        <script>
+            window.onload = function()
+            {
+                if(sessionStorage.getItem("username") === "username")
+                {
+                    document.getElementById('body_data').style.display = 'block';
+                }
+                else
+                {
+                    document.getElementById('body_data').style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+</html>
