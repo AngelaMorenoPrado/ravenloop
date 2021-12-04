@@ -7,23 +7,6 @@
         <link rel="stylesheet" href="../src/css/css.css">
     </head>
     <body class="body_data" id="body_data">
-        <header class="header-style borde-header" id="header-pagina">
-            <input type="checkbox" id="btn-menu">
-            <label for="btn-menu" class="icon-menu" title="Botón abrir menú" id="label-input">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </label>
-            <section class="header-section derecha relative" id="section-idioma">
-                <article class="texto-header">
-                    <label id="username"></label>
-                    <label class="distancia-barra">|</label>
-                    <label id="date"></label>
-                    <label class="distancia-barra">|</label>
-                    <a class="pointer" onclick="cerrarSesion()"><strong>CERRAR SESIÓN</strong></a>
-                </article>
-            </section>
-        </header>
         <nav id="nav-menu" class="navbar-style">
             <br>
             <ul> 
@@ -31,11 +14,118 @@
                 <li class="lista-menu"><a href="" class="letra_navbar">Dashboard</a></li>
             </ul>
         </nav>
+        <header class="header-style borde-header" id="header-pagina">
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu" class="icon-menu" title="Botón abrir menú" onClick="myFunction(this)" id="label-input">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </label>
+            <section class="header-section derecha relative" id="section-idioma">
+                <article class="texto-header">
+                    <label id='username'></label>
+                    <label class="distancia-barra">|</label>
+                    <label id='date'></label>
+                    <label class="distancia-barra">|</label>
+                    <a class="pointer" onclick="cerrarSesion()"><strong>CERRAR SESIÓN</strong></a>
+                </article>
+            </section>
+        </header>
+        <section class="section_general">
+            <article class="article_general">
+                <div id="actualizar_medio_Modal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content-m">
+                        <span class="close" id="cerrar_boton_medio">&times;</span>
+                        <div class="col-8 text-center m-auto-p">
+                            <label class="separador"><strong>ACTUALIZAR MEDIO</strong></label>
+                            <form role="form" method="POST">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="id_nombre"><strong>MEDIO DE COMUNICACIÓN *</strong></label>
+                                        <input type="text" class="form-control" id="id_nombre" name="nombre" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputSede"><strong>SEDE *</strong></label>
+                                        <input type="text" class="form-control" id="inputSede" name="sede" value="{{ sedes }}" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="id_email"><strong>EMAIL *</strong></label>
+                                        <input type="email" class="form-control" id="id_email" name="email"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                            title="Introduce un email que sigue el siguiente formato: algo @ algo .com"
+                                            required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="id_email2"><strong>EMAIL SECUNDARIO</strong></label>
+                                        <input type="email" class="form-control" id="id_email2" name="email2"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                            title="Introduce un email que sigue el siguiente formato: algo @ algo .com">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="id_telefono"><strong>TELEFONO *</strong></label>
+                                        <input type="tel" class="form-control" id="id_telefono" name="telefono"
+                                            pattern="[0-9]{9}"
+                                            title="El número introducido debe contener nueve dígitos."
+                                            required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="id_telefono2"><strong>TELÉFONO SECUNDARIO</strong></label>
+                                        <input type="tel" class="form-control" id="id_telefono2" name="telefono2"
+                                            pattern="[0-9]{9}"
+                                            title="El número introducido debe contener nueve dígitos.">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="id_persona"><strong>PERSONA DE CONTACTO *</strong></label>
+                                        <input type="text" class="form-control" id="id_persona" name="persona" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="id_persona2"><strong>PERSONA DE CONTACTO SECUNDARIA</strong></label>
+                                        <input type="text" class="form-control" id="id_persona2" name="persona2">
+                                    </div>
+                                </div>
+                                <p>Todos los campos marcados con un asterisco (*) son <strong>OBLIGATORIOS</strong>.</p>
+                                <button type="submit" class="btn btn-success">ACTUALIZAR</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article_general" id="contenedor">
+                <label class="separador uppercase"><strong>COMUNICADOS</strong></label>
+                    
+                <table class="table content-table section_article" id="table">
+                    <thead>
+                        <tr>
+                            <th><strong>Nombre del fichero</strong></th>
+                            <th><strong>hashmd5</strong></th>
+                            <th><strong>Fecha de inserción</strong></th>
+                            <th><strong>Última actualización</strong></th>
+                            <th><strong>Sistema operativo</strong></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="body-table">
+                    </tbody>
+                </table>
+                
+            </article>
+        </section>
         <script type="text/javascript" src="../src/data.json"></script>
         <script type="text/javascript" src="../src/js/javascript.js"></script>
         <script>
-            window.onload = function()
-            {
+            var width,height;
+            window.onload = function() {
+
                 if(sessionStorage.getItem("username") === "username")
                 {
                     document.getElementById('body_data').style.display = 'block';
@@ -49,10 +139,28 @@
                     today = dd + '/' + mm + '/' + yyyy;
 
                     document.getElementById('date').innerHTML = "Fecha: " + today;
+
+                    rellenarTabla();
                 }
                 else
                 {
                     window.location.href = 'index.html';
+                }
+
+                window.onresize = function()
+                {
+                    width = this.innerWidth;
+                    if(width > 1024)
+                    {
+                        var input = document.getElementById('btn-menu');
+                        var label_input = document.getElementById('label-input');
+                        var menu = document.getElementById('nav-menu');
+
+                        menu.style.removeProperty('transform');
+                        menu.style.removeProperty('width');
+
+                        label_input.classList.remove('change');
+                    }
                 }
             }
         </script>
