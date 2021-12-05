@@ -304,18 +304,240 @@ ul
     text-transform: uppercase;
 }
 
+/* Modal Content */
+
 .modal {
-    position: fixed;
-    top: 0;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
     left: 0;
-    z-index: 1050;
-    display: none;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    outline: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow-y: auto;
   }
 
+.modal-content-m {
+    background-color: #f3f3f3;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 76%;
+    text-align: center;
+    overflow-y: auto;
+    max-height: 35em;
+    float: right;
+    margin-right: 5%;
+}
+
+.row
+{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.column
+{
+    flex-direction: column;
+}
+
+.w-20
+{
+    width: 28%;
+}
+
+.w-70
+{
+    width: 60%;
+}
+
+.col-modal
+{
+    max-width: 80%;
+}
+
+.m-auto-p
+{
+  margin:auto;
+  padding-bottom:15px;
+}
+
+.close{
+    color: #aaaaaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.content-table-modal {
+    margin: 10px 0;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+}
+
+/* TABLA */
+
+.btn-tabla
+{
+    border-radius: 0.2rem;
+    border: 1px solid #ced4da;
+    height: 2rem;
+    transition-duration: 1.3s;
+    color: white;
+    background-color: #007bff;
+}
+
+.section_article{
+    margin: 0 auto;
+    padding: 0;
+}
+
+.content-table {
+    margin: 10px 0;
+    font-size: 0.9em;
+    min-width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+.content-table thead tr, .content-table-modal thead tr {
+    background-color: #CA4935;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .content-table tbody tr, .content-table-modal tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .content-table tbody tr:nth-of-type(even), ..content-table-modal tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type, .content-table-modal tbody tr:last-of-type {
+    border-bottom: 2px solid #CA4935;
+  }
+  
+  .content-table tbody tr.active-row, .content-table-modal tbody tr.active-row {
+    font-weight: bold;
+    color: #CA4935;
+  }
+
+  .table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  margin: 0;
+}
+
+.pagination_class
+{
+    width: 3%;
+    display: inline-block;
+    padding: 3px;
+    border: 1px solid #ddd;
+    margin-right: 1px;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.selected
+{
+    background-color: #007bff;
+    color: white;
+}
+
+.number_row
+{
+    color: grey;
+}
+
+/* DATA */
+
+.data_dashboard
+{
+    background-color: #fefefe;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 0.7em;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+p
+{
+    margin: 0;
+}
+
+/* CHART */
+
+.single-chart {
+    width: 70%;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.margin-left
+{
+    margin-left: 4em;
+}
+
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 70%;
+    max-height: 250px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+  }
+
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+  .circular-chart.blue .circle {
+    stroke: #3c9ee5;
+  }
+  
+  .percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+  }
 
 /* RESPONSIVE */
 

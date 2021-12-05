@@ -11,7 +11,6 @@
             <br>
             <ul> 
                 <li class="lista-menu"><a href="data.html" class="letra_navbar pointer">Resumen</a></li>
-                <li class="lista-menu"><a href="" class="letra_navbar">Dashboard</a></li>
             </ul>
         </nav>
         <header class="header-style borde-header" id="header-pagina">
@@ -33,67 +32,76 @@
         </header>
         <section class="section_general">
             <article class="article_general">
-                <div id="actualizar_medio_Modal" class="modal">
+                <div id="visualizarModal" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content-m">
-                        <span class="close" id="cerrar_boton_medio">&times;</span>
-                        <div class="col-8 text-center m-auto-p">
-                            <label class="separador"><strong>ACTUALIZAR MEDIO</strong></label>
-                            <form role="form" method="POST">
-                                {% csrf_token %}
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="id_nombre"><strong>MEDIO DE COMUNICACIÓN *</strong></label>
-                                        <input type="text" class="form-control" id="id_nombre" name="nombre" required>
+                        <span class="close" id="cerrar_boton_modal">&times;</span>
+                        <div class="col-modal text-center m-auto-p">
+                            <label class="separador" id="titulo_dashboard"></label>
+                            <section class="row">
+                                <article class="column w-20">
+                                    <div class="data_dashboard">
+                                        <p><strong>FICHERO</strong></p>
+                                        <p id="nombre_fichero"></p>
+                                        <p id="extension_fichero"></p>
+                                        <p id="tam_fichero"></p>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputSede"><strong>SEDE *</strong></label>
-                                        <input type="text" class="form-control" id="inputSede" name="sede" value="{{ sedes }}" readonly>
+                                    <div class="data_dashboard">
+                                        <p><strong>HASH MD5</strong></p>
+                                        <p id="hash_md5"></p>
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="id_email"><strong>EMAIL *</strong></label>
-                                        <input type="email" class="form-control" id="id_email" name="email"
-                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                            title="Introduce un email que sigue el siguiente formato: algo @ algo .com"
-                                            required>
+                                    <div class="data_dashboard">
+                                        <p><strong>HASH SHA256</strong></p>
+                                        <p id="hash_sha256"></p>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="id_email2"><strong>EMAIL SECUNDARIO</strong></label>
-                                        <input type="email" class="form-control" id="id_email2" name="email2"
-                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                            title="Introduce un email que sigue el siguiente formato: algo @ algo .com">
+                                    <div class="data_dashboard">
+                                        <p><strong>HASH SHA-1</strong></p>
+                                        <p id="hash_sha1"></p>
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="id_telefono"><strong>TELEFONO *</strong></label>
-                                        <input type="tel" class="form-control" id="id_telefono" name="telefono"
-                                            pattern="[0-9]{9}"
-                                            title="El número introducido debe contener nueve dígitos."
-                                            required>
+                                    <div class="data_dashboard">
+                                        <p><strong>PUNTUACIÓN</strong></p>
+                                        <div class="single-chart">
+                                            <svg viewBox="0 0 36 36" class="circular-chart blue">
+                                                <path class="circle-bg"
+                                                    d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                />
+                                                <path class="circle"
+                                                    id="percentage_puntuacion_array"
+                                                    stroke-dasharray="90, 100"
+                                                    d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                />
+                                              <text x="18" y="20.35" class="percentage" id="percentage_graph"></text>
+                                            </svg>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="id_telefono2"><strong>TELÉFONO SECUNDARIO</strong></label>
-                                        <input type="tel" class="form-control" id="id_telefono2" name="telefono2"
-                                            pattern="[0-9]{9}"
-                                            title="El número introducido debe contener nueve dígitos.">
+                                </article>
+                                <article class="data_dashboard margin-left">
+                                    <h3 class="mayus">Importancia de los ficheros afectados</h3>
+                                    <div id="plotly_line"></div>
+                                </article>
+                            </section>
+                            <section class="row">
+                                <article class="w-20">
+                                    <div class="data_dashboard">
+                                        <table class="table content-table-modal section_article" id="table_ip">
+                                            <thead>
+                                                <tr class="mayus">
+                                                    <th></th>
+                                                    <th><strong>IP</strong></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="body-table-ip">
+                                            </tbody>
+                                        </table>
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="id_persona"><strong>PERSONA DE CONTACTO *</strong></label>
-                                        <input type="text" class="form-control" id="id_persona" name="persona" required>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="id_persona2"><strong>PERSONA DE CONTACTO SECUNDARIA</strong></label>
-                                        <input type="text" class="form-control" id="id_persona2" name="persona2">
-                                    </div>
-                                </div>
-                                <p>Todos los campos marcados con un asterisco (*) son <strong>OBLIGATORIOS</strong>.</p>
-                                <button type="submit" class="btn btn-success">ACTUALIZAR</button>
-                            </form>
+                                </article>
+                                <article class="w-20"></article>
+                                <article class="w-20"></article>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -103,20 +111,27 @@
                     
                 <table class="table content-table section_article" id="table">
                     <thead>
-                        <tr>
+                        <tr class="mayus">
+                            <th></th>
                             <th><strong>Nombre del fichero</strong></th>
                             <th><strong>hashmd5</strong></th>
                             <th><strong>Fecha de inserción</strong></th>
                             <th><strong>Última actualización</strong></th>
                             <th><strong>Sistema operativo</strong></th>
                             <th></th>
-                            <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="body-table">
                     </tbody>
                 </table>
+                <!--		Start Pagination -->
+                <div class='pagination-container'>
+                    <nav>
+                        <ul class="pagination" id="ul_pagination">
+
+                        </ul>
+                    </nav>
+                </div>
                 
             </article>
         </section>
@@ -164,5 +179,6 @@
                 }
             }
         </script>
+        <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
     </body>
 </html>
