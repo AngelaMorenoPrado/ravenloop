@@ -151,6 +151,10 @@ function visualizar_malware(number)
     var y_danio = [];
     var ficheros = [];
     var antivirus_listado = [];
+    var ficheros_clean = [];
+    var ficheros_malicious = [];
+    var f_clean = 0;
+    var f_malicious = 0;
 
     var reporte = number + 1;
 
@@ -209,35 +213,88 @@ function visualizar_malware(number)
         var fichero = data.datos[number].ficheros;
         var count = Object.keys(fichero[0]).length;
 
+        var antivirus = data.datos[number].antivirus;
+        var count_antivirus = Object.keys(antivirus).length;
+
+        var th_table = document.getElementById('th-table');
+
+        th_table.innerHTML = '';
+        th_table.innerHTML = '<th></th><th><strong>Ficheros</strong></th>';
+
+        for(var i=0; i<count_antivirus; i++)
+        {
+            antivirus_listado.push(Object.keys(antivirus[i]));
+            th_table.innerHTML += '<th><strong>'+Object.keys(antivirus[i])+'</strong></th>';
+        }
+
         if(count == 0)
         {
-            document.getElementById('table_ficheros').style.display = "none";
             document.getElementById('graph_plotly').style.display = "none";
+            document.getElementById('plotly_bar_section').style.display = "none";
+
+            var table = '';
+
+            table += "<tr><td class='number_row'>#0</td><td>"+data.datos[number].nombre+"</td>";
+
+            for(var u=0; u<antivirus_listado.length; u++)
+            {
+                if(data.datos[number].status === 'clean')
+                {
+                    clase_style = 'color: green; font-weight: bold';
+                }
+                else
+                {
+                    clase_style = 'color: #CA4935; font-weight: bold;';
+                }
+
+                table += "<td style='"+clase_style+"' class='mayus'>"+data.datos[number].status+"</td>";
+            }
+
+            table += "</tr>";
+
+            document.getElementById('body-table-ficheros').innerHTML += table;
         }
         else
         {
             document.getElementById('table_ficheros').style.display = "table";
             document.getElementById('graph_plotly').style.display = "block";
-
-            var th_table = document.getElementById('th-table');
-
-            var antivirus = data.datos[number].antivirus;
-            var count_antivirus = Object.keys(antivirus).length;
-
-            th_table.innerHTML = '';
-            th_table.innerHTML = '<th></th><th><strong>Ficheros</strong></th>';
-
-            for(var i=0; i<count_antivirus; i++)
-            {
-                antivirus_listado.push(Object.keys(antivirus[i]));
-                th_table.innerHTML += '<th><strong>'+Object.keys(antivirus[i])+'</strong></th>';
-            }
+            document.getElementById('plotly_bar_section').style.display = "block";
         
             var clase_style = '';
             document.getElementById('body-table-ficheros').innerHTML = '';
 
+            var table = '';
+
+            table += "<tr><td class='number_row'>#0</td><td>"+data.datos[number].nombre+"</td>";
+
+            for(var u=0; u<antivirus_listado.length; u++)
+            {
+                if(data.datos[number].status === 'clean')
+                {
+                    clase_style = 'color: green; font-weight: bold';
+                    f_clean += 1;
+                }
+                else
+                {
+                    clase_style = 'color: #CA4935; font-weight: bold;';
+                    f_malicious += 1;
+                }
+
+                table += "<td style='"+clase_style+"' class='mayus'>"+data.datos[number].status+"</td>";
+            }
+
+            ficheros_clean.push(f_clean);
+            ficheros_malicious.push(f_malicious);
+
+            table += "</tr>";
+
+            document.getElementById('body-table-ficheros').innerHTML += table;
+
             for(var i=1; i<=count; i++)
             {
+                f_clean = 0;
+                f_malicious = 0;
+
                 var table = '';
 
                 table += "<tr><td class='number_row'>#"+i+"</td><td>"+fichero[0]['fichero'+i]+"</td>";
@@ -247,10 +304,12 @@ function visualizar_malware(number)
                     if(antivirus[u][antivirus_listado[u]][0]['fichero'+i] === 'clean')
                     {
                         clase_style = 'color: green; font-weight: bold';
+                        f_clean += 1;
                     }
                     else
                     {
                         clase_style = 'color: #CA4935; font-weight: bold;';
+                        f_malicious += 1;
                     }
 
                     table += "<td style='"+clase_style+"' class='mayus'>"+antivirus[u][antivirus_listado[u]][0]['fichero'+i]+"</td>";
@@ -258,15 +317,16 @@ function visualizar_malware(number)
 
                 table += "</tr>";
 
-                console.log(table);
                 document.getElementById('body-table-ficheros').innerHTML += table;
+
+                ficheros_clean.push(f_clean);
+                ficheros_malicious.push(f_malicious);
             }
 
             // GRAFICO LINEAR 
 
             var puntuacion_ficheros = data.datos[number].puntuacion_ficheros;
             var count = Object.keys(puntuacion_ficheros[0]).length;
-
 
             var danio_ficheros = data.datos[number].danio_ficheros;
 
@@ -277,6 +337,22 @@ function visualizar_malware(number)
                 ficheros.push(fichero[0]['fichero'+i]);
                 y_danio.push(danio_ficheros[0]['fichero'+i]);
             }
+
+            var values_plotly_bar = [data.datos[number].nombre].concat(ficheros);
+
+            var trace1_bar = {
+                x: values_plotly_bar,
+                y: ficheros_clean,
+                name: 'Archivo limpio',
+                type: 'bar',
+            };
+              
+            var trace2_bar = {
+                x: values_plotly_bar,
+                y: ficheros_malicious,
+                name: 'Archivo afectado',
+                type: 'bar'
+            };
 
             var trace1 = {
                 x: x,
@@ -292,6 +368,13 @@ function visualizar_malware(number)
                 type: 'scatter',
                 name: 'Daño ficheros',
                 text: ficheros
+            };
+
+            var layout_bar = 
+            {
+                barmode: 'stack',
+                paper_bgcolor: "rgba(0,0,0,0)",
+                plot_bgcolor: "rgba(0,0,0,0)"
             };
 
             var layout_trace1 = {
@@ -334,10 +417,15 @@ function visualizar_malware(number)
         
             data = [trace1, trace2];
 
-            var config = {responsive: true}
+            var config = {responsive: true};
+
+            data_bar = [trace1_bar, trace2_bar];
         
             var plotly_line = document.getElementById('plotly_line');
             Plotly.newPlot(plotly_line, data, layout_trace1, config);
+
+            var plotly_bar = document.getElementById('plotly_bar');
+            Plotly.newPlot(plotly_bar, data_bar, layout_bar, config);
 
         }
 

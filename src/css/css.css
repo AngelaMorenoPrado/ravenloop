@@ -63,10 +63,22 @@ body
     max-width: 66%;;
 }
 
+.w-100-img
+{
+    width: 100%;
+    max-width: 100%;
+}
+
 .w-100
 {
     width: 100%;
     max-width: 100%;
+}
+
+.w-90
+{
+    width: 98%;
+    max-width: 98%;
 }
 
 .form-control
@@ -352,12 +364,22 @@ ul
 
 .w-30
 {
-    width: 31%;
+    width: 36%;
+}
+
+.w-70
+{
+    width: 82%;
+}
+
+.w-50
+{
+    width: 45%;
 }
 
 .w-60
 {
-    width: 63%;
+    width: 57%;
     overflow-x: scroll;
 }
 
@@ -492,8 +514,8 @@ ul
 
 .pagination
 {
-    position: fixed;
-    width: 76%;
+    position: block;
+    width: 100%;
 }
 
 .pagination_class
@@ -781,7 +803,30 @@ p
 
     .pagination
     {
-        position: fixed;
+        position: block;
         width: 100%;
     }
+
+    #avatar-login
+    {
+        width: 60%;
+    }
+
+    .separador
+    {
+        height: 1.6em;
+        width: 80%;
+        background: #CA4935;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align:center;
+        border-radius: 5px;
+        box-shadow: 4px 4px 5px rgba(0, 0, 0, .8);
+        color: #fff;
+        padding-top:8px;
+        margin-bottom: 2em;
+        font-size: 1em;
+    }
+    
 }

@@ -9,62 +9,6 @@
     {
       "nombre": "Nombre 1",
       "hashmd5": "d41d8cd98f00b204e9800998ecf8427e",
-      "fecha": "17/10/2020",
-      "actualizacion": "24/12/2021",
-      "sistema": "Windows",
-      "extension": ".exe",
-      "tam": "11Mb",
-      "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
-      "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
-      "ip": [
-        {
-          "ip1": "168.212.228.204",
-          "ip2": "170.212.223.204"
-        }
-      ],
-      "puntuacion": "54",
-      "ficheros": [
-        {
-        }
-      ],
-      "puntuacion_ficheros": [
-        {
-        }
-      ],
-      "danio_ficheros": [
-        {
-        }
-      ],
-      "antivirus": [
-        {
-          "norton": [
-            {
-            }
-          ]
-        },
-        {
-          "avast": [
-            {
-            }
-          ]
-        },
-        {
-          "macafee": [
-            {
-            }
-          ]
-        },
-        {
-          "panda": [
-            {
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "nombre": "Nombre 2",
-      "hashmd5": "d41d8cd98f00b204e9800998ecf8427e",
       "fecha": "07/10/2020",
       "actualizacion": "04/12/2021",
       "sistema": "Windows",
@@ -72,88 +16,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
-      "ip": [
-        {
-        }
-      ],
-      "puntuacion": "80",
-      "ficheros": [
-        {
-          "fichero1": "password.exe",
-          "fichero2": "password.txt",
-          "fichero3": "foto.png",
-          "fichero4": "dni.png"
-        }
-      ],
-      "puntuacion_ficheros": [
-        {
-          "fichero1": "9",
-          "fichero2": "2",
-          "fichero3": "10",
-          "fichero4": "3"
-        }
-      ],
-      "danio_ficheros": [
-        {
-          "fichero1": "3",
-          "fichero2": "5",
-          "fichero3": "9",
-          "fichero4": "5"
-        }
-      ],
-      "antivirus": [
-        {
-          "norton": [
-            {
-              "fichero1": "clean",
-              "fichero2": "malicious",
-              "fichero3": "clean",
-              "fichero4": "malicious"
-            }
-          ]
-        },
-        {
-          "avast": [
-            {
-              "fichero1": "malicious",
-              "fichero2": "clean",
-              "fichero3": "malicious",
-              "fichero4": "malicious"
-            }
-          ]
-        },
-        {
-          "macafee": [
-            {
-              "fichero1": "clean",
-              "fichero2": "clean",
-              "fichero3": "clean",
-              "fichero4": "clean"
-            }
-          ]
-        },
-        {
-          "panda": [
-            {
-              "fichero1": "clean",
-              "fichero2": "clean",
-              "fichero3": "malicious",
-              "fichero4": "clean"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "nombre": "Nombre 3",
-      "hashmd5": "d41d8cd98f00b204e9800998ecf8427e",
-      "fecha": "07/10/2020",
-      "actualizacion": "04/12/2021",
-      "sistema": "Windows",
-      "extension": ".exe",
-      "tam": "1GB",
-      "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
-      "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -229,6 +92,146 @@
       ]
     },
     {
+      "nombre": "Nombre 2",
+      "hashmd5": "d41d8cd98f00b204e9800998ecf8427e",
+      "fecha": "07/10/2020",
+      "actualizacion": "04/12/2021",
+      "sistema": "Windows",
+      "extension": ".exe",
+      "tam": "1GB",
+      "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
+      "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
+      "ip": [
+        {
+        }
+      ],
+      "puntuacion": "80",
+      "ficheros": [
+        {
+          "fichero1": "password.exe",
+          "fichero2": "password.txt",
+          "fichero3": "foto.png",
+          "fichero4": "dni.png"
+        }
+      ],
+      "puntuacion_ficheros": [
+        {
+          "fichero1": "9",
+          "fichero2": "2",
+          "fichero3": "10",
+          "fichero4": "3"
+        }
+      ],
+      "danio_ficheros": [
+        {
+          "fichero1": "3",
+          "fichero2": "5",
+          "fichero3": "9",
+          "fichero4": "5"
+        }
+      ],
+      "antivirus": [
+        {
+          "norton": [
+            {
+              "fichero1": "clean",
+              "fichero2": "malicious",
+              "fichero3": "clean",
+              "fichero4": "malicious"
+            }
+          ]
+        },
+        {
+          "avast": [
+            {
+              "fichero1": "malicious",
+              "fichero2": "clean",
+              "fichero3": "malicious",
+              "fichero4": "malicious"
+            }
+          ]
+        },
+        {
+          "macafee": [
+            {
+              "fichero1": "clean",
+              "fichero2": "clean",
+              "fichero3": "clean",
+              "fichero4": "clean"
+            }
+          ]
+        },
+        {
+          "panda": [
+            {
+              "fichero1": "clean",
+              "fichero2": "clean",
+              "fichero3": "malicious",
+              "fichero4": "clean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Nombre 3",
+      "hashmd5": "d41d8cd98f00b204e9800998ecf8427e",
+      "fecha": "17/10/2020",
+      "actualizacion": "24/12/2021",
+      "sistema": "Windows",
+      "extension": ".exe",
+      "tam": "11Mb",
+      "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
+      "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "clean",
+      "ip": [
+        {
+          "ip1": "168.212.228.204",
+          "ip2": "170.212.223.204"
+        }
+      ],
+      "puntuacion": "54",
+      "ficheros": [
+        {
+        }
+      ],
+      "puntuacion_ficheros": [
+        {
+        }
+      ],
+      "danio_ficheros": [
+        {
+        }
+      ],
+      "antivirus": [
+        {
+          "norton": [
+            {
+            }
+          ]
+        },
+        {
+          "avast": [
+            {
+            }
+          ]
+        },
+        {
+          "macafee": [
+            {
+            }
+          ]
+        },
+        {
+          "panda": [
+            {
+            }
+          ]
+        }
+      ]
+    },
+    {
       "nombre": "Nombre 4",
       "hashmd5": "d41d8cd98f00b204e9800998ecf8427e",
       "fecha": "07/10/2020",
@@ -238,6 +241,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -322,6 +326,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -406,6 +411,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -490,6 +496,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -574,6 +581,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -658,6 +666,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -742,6 +751,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -826,6 +836,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -910,6 +921,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -994,6 +1006,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -1078,6 +1091,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -1162,6 +1176,7 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
@@ -1246,13 +1261,14 @@
       "tam": "1GB",
       "hashsha256": "917774f43adbd57721168561f31dcfeffee9a01e46d24ab95b729bee975ee1c5",
       "hashsha1": "e1def42c3273c5d9468d7c3388ea8558cf35482a",
+      "status": "malicious",
       "ip": [
         {
           "ip1": "168.212.226.204",
           "ip2": "170.212.222.204"
         }
       ],
-      "puntuacion": "80",
+      "puntuacion": "30",
       "ficheros": [
         {
           "fichero1": "password.exe",
