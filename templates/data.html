@@ -41,25 +41,25 @@
                             <section class="row">
                                 <article class="column w-20">
                                     <div class="data_dashboard">
-                                        <p><strong>FICHERO</strong></p>
+                                        <p class="titulo_modal"><strong>FICHERO</strong></p>
                                         <p id="nombre_fichero"></p>
                                         <p id="extension_fichero"></p>
                                         <p id="tam_fichero"></p>
                                     </div>
                                     <div class="data_dashboard">
-                                        <p><strong>HASH MD5</strong></p>
+                                        <p class="titulo_modal"><strong>HASH MD5</strong></p>
                                         <p id="hash_md5"></p>
                                     </div>
                                     <div class="data_dashboard">
-                                        <p><strong>HASH SHA256</strong></p>
+                                        <p class="titulo_modal"><strong>HASH SHA256</strong></p>
                                         <p id="hash_sha256"></p>
                                     </div>
                                     <div class="data_dashboard">
-                                        <p><strong>HASH SHA-1</strong></p>
+                                        <p class="titulo_modal"><strong>HASH SHA-1</strong></p>
                                         <p id="hash_sha1"></p>
                                     </div>
                                     <div class="data_dashboard">
-                                        <p><strong>PUNTUACIÓN</strong></p>
+                                        <p class="titulo_modal"><strong>PUNTUACIÓN</strong></p>
                                         <div class="single-chart">
                                             <svg viewBox="0 0 36 36" class="circular-chart blue">
                                                 <path class="circle-bg"
@@ -79,15 +79,15 @@
                                         </div>
                                     </div>
                                 </article>
-                                <article class="data_dashboard margin-left">
+                                <article class="data_dashboard margin-left resize-graph" id="graph_plotly">
                                     <h3 class="mayus">Importancia de los ficheros afectados</h3>
                                     <div id="plotly_line"></div>
                                 </article>
                             </section>
                             <section class="row">
-                                <article class="w-20">
-                                    <div class="data_dashboard">
-                                        <table class="table content-table-modal section_article" id="table_ip">
+                                <article class="w-30 m-right" id="table_ip">
+                                    <div class="table-modal">
+                                        <table class="table content-table-modal section_article height-table">
                                             <thead>
                                                 <tr class="mayus">
                                                     <th></th>
@@ -99,36 +99,46 @@
                                         </table>
                                     </div>
                                 </article>
-                                <article class="w-20"></article>
-                                <article class="w-20"></article>
+                                <article class="w-60 m-right">
+                                    <div class="table-modal">
+                                        <table class="table content-table-modal section_article " id="table_ficheros">
+                                            <thead>
+                                                <tr class="mayus" id="th-table">
+                                                </tr>
+                                            </thead>
+                                            <tbody id="body-table-ficheros">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </article>
                             </section>
                         </div>
                     </div>
                 </div>
             </article>
-            <article class="article_general" id="contenedor">
+            <article id="contenedor">
                 <label class="separador uppercase"><strong>COMUNICADOS</strong></label>
-                    
-                <table class="table content-table section_article" id="table">
-                    <thead>
-                        <tr class="mayus">
-                            <th></th>
-                            <th><strong>Nombre del fichero</strong></th>
-                            <th><strong>hashmd5</strong></th>
-                            <th><strong>Fecha de inserción</strong></th>
-                            <th><strong>Última actualización</strong></th>
-                            <th><strong>Sistema operativo</strong></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="body-table">
-                    </tbody>
-                </table>
+                <div class="article_general">
+                    <table class="table content-table section_article" id="table">
+                        <thead>
+                            <tr class="mayus">
+                                <th></th>
+                                <th><strong>Nombre del fichero</strong></th>
+                                <th><strong>hashmd5</strong></th>
+                                <th><strong>Fecha de inserción</strong></th>
+                                <th><strong>Última actualización</strong></th>
+                                <th><strong>Sistema operativo</strong></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="body-table">
+                        </tbody>
+                    </table>
+                </div>
                 <!--		Start Pagination -->
                 <div class='pagination-container'>
                     <nav>
                         <ul class="pagination" id="ul_pagination">
-
                         </ul>
                     </nav>
                 </div>
